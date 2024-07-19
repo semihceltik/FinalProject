@@ -1,6 +1,7 @@
 import 'dart:ffi';
 
 import 'package:flutter/material.dart';
+import 'forumapp.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
@@ -12,7 +13,7 @@ class Homepage extends StatefulWidget {
 class _HomepageState extends State<Homepage> {
 
   void clickFunction(){
-    // Giris Yap butonuna basıldıktan sonra yapılacak seyler burada yazılacaktır.
+
   }
   @override
   Widget build(BuildContext context) {
@@ -110,7 +111,15 @@ class _HomepageState extends State<Homepage> {
                         color: Colors.deepPurple.shade500
                       ),
                       child: Center(
-                        child: Text('Giriş Yap',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold ),),
+                        child: ElevatedButton(
+                          onPressed: (){
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => forumapp()),
+                            );
+                          },
+                          child: Text('Giriş Yap'),
+                        )
                       ),
                     ),
                     SizedBox(height: 30,),
